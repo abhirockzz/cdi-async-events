@@ -18,6 +18,12 @@
 
 *Try this with multiple clients - for both SSE and Websocket*. Console logs show the asynchronous nature of CDI events
 
+Notice the asynchronous events running in Managed Executor service thread
+
+![](https://abhirockzz.files.wordpress.com/2017/06/action-2.jpg)
+
+You can choose to let things run in the default (container) chosen thread
+
 ![](https://abhirockzz.files.wordpress.com/2017/06/cdi-2-async-events-in-action.jpg)
 
 ## once you're done

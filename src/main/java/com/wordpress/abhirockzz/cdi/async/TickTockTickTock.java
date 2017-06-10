@@ -8,7 +8,9 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.ejb.Timeout;
 import javax.ejb.TimerService;
+import javax.enterprise.concurrent.ManagedExecutorService;
 import javax.enterprise.event.Event;
+import javax.enterprise.event.NotificationOptions;
 import javax.inject.Inject;
 
 @Singleton
@@ -30,10 +32,14 @@ public class TickTockTickTock {
     
     private static final Random gen = new Random();
     
+    @Resource
+    private ManagedExecutorService mes;
+    
     @Timeout
     public void onTrigger() {
         System.out.println("timer triggered");
-        eventBus.fireAsync(new TickTock("tick-"+gen.nextInt(10), "tock-"+gen.nextInt(10)));
+        eventBus.fireAsync(new TickTock("tick-"+gen.nextInt(10), "tock-"+gen.nextInt(10)),
+                            NotificationOptions.builder().setExecutor(mes).build());
         System.out.println("Fired CDI event from thread "+ Thread.currentThread().getName());
     }
 }
