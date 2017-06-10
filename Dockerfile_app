@@ -1,0 +1,3 @@
+FROM abhirockzz/gf5-nightly
+ENV WAR cdi-async-events.war
+COPY target/${WAR} ${DEPLOYMENT_DIR}
