@@ -8,7 +8,7 @@
 
 ## Test it...
 
-- `http://<docker_ip>:8080/cd-async-events/events/subscribe`. You should see a continuous stream of (SSE) events
+- `http://<docker_ip>:8080/cdi-async-events/events/subscribe`. You should see a continuous stream of (SSE) events
 
 ![](https://abhirockzz.files.wordpress.com/2017/06/sse-output.jpg)
 
