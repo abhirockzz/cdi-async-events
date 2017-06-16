@@ -1,6 +1,7 @@
 ## To run....
 
 - `git clone https://github.com/abhirockzz/cdi-async-events.git` 
+- `mvn clean install`
 - `docker build -t abhirockzz/gf5-nightly -f Dockerfile_gf5_nightly .`
 - `docker build -t abhirockzz/gf5-cdi-example -f Dockerfile_app .`
 - `docker run --rm --name gf5cdi -it -p 8080:8080 -p 4848:4848 -p 8181:8181 abhirockzz/gf5-nightly-cdi-example`
